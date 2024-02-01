@@ -1,0 +1,43 @@
+https://leetcode.com/problems/add-two-numbers/description/
+
+void insert(ListNode* &tail, int val){
+    ListNode* temp = new ListNode();
+    temp->val = val;
+    tail->next=temp;
+    tail=temp;
+}
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        ListNode* ans = new ListNode();
+        ListNode* tail = ans;
+        int carry = 0, left =0, right=0, num =0;
+        while( l1 != NULL && l2 != NULL ){
+            left = l1->val;
+            right = l2->val;
+            num = (left + right + carry)%10;
+            carry = (left + right + carry)/10;
+            insert(tail, num);
+            l1 = l1->next;
+            l2 = l2->next;
+        }
+        while(l2!=NULL){
+            right = l2->val;
+            num = (right + carry)%10;
+            carry = (right + carry)/10;
+            insert(tail, num);
+            l2 = l2->next;
+        }
+        while(l1!=NULL){
+            left = l1->val;
+            num = (left + carry)%10;
+            carry = (left + carry)/10;
+            insert(tail, num);
+            l1 = l1->next;
+        }
+        if(carry){
+            insert(tail, carry);
+        }
+        return ans->next;
+    }
+};
