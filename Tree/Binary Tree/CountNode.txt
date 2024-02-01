@@ -1,0 +1,11 @@
+https://leetcode.com/problems/count-complete-tree-nodes/
+
+class Solution {
+public:
+    int countNodes(TreeNode* root) {
+        if(root==NULL) return 0;
+        int l_node = countNodes(root->left);
+        int r_node = countNodes(root->right);
+        return (l_node + r_node + 1); 
+    }
+};

@@ -1,0 +1,22 @@
+https://www.geeksforgeeks.org/problems/height-of-binary-tree/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
+
+class Solution{
+    public:
+    //Function to find the height of a binary tree.
+    int height(struct Node* node){
+        // code here 
+        
+        int l_height=1;
+        int r_height=1;
+        
+        if(node->left!=NULL){
+            l_height += height(node->left);
+        }
+        if(node->right!=NULL){
+            r_height += height(node->right);
+        }
+        
+        return max(l_height, r_height);
+
+    }
+};
