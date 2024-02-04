@@ -10,30 +10,23 @@ public:
             return NULL;
         }
         
-        // Calculate the middle index
-        int mid = (start + end) / 2;
+        int mid = (start + end) / 2;  // Calculate the middle index
 
-        // Create a new TreeNode with the value at the middle index
-        TreeNode* root = new TreeNode(nums[mid]);
+        TreeNode* root = new TreeNode(nums[mid]);  // Create a new TreeNode with the value at the middle index
 
-        // Recursively build the left subtree with elements to the left of the middle index
-        root->left = rec(nums, start, mid - 1);
+        root->left = rec(nums, start, mid - 1);  // Recursively build the left subtree with elements to the left of the middle index
 
-        // Recursively build the right subtree with elements to the right of the middle index
-        root->right = rec(nums, mid + 1, end);
+        root->right = rec(nums, mid + 1, end);  // Recursively build the right subtree with elements to the right of the middle index
 
-        // Return the root of the constructed subtree
-        return root;
+        return root;  // Return the root of the constructed subtree
     }
 
     // Function to convert a sorted array to a balanced BST
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-        // Initialize start and end indices
-        int start = 0;
+        int start = 0;  // Initialize start and end indices
         int end = nums.size() - 1;
 
-        // Call the recursive function to build the BST and return the root
-        TreeNode* root = rec(nums, start, end);
+        TreeNode* root = rec(nums, start, end);  // Call the recursive function to build the BST and return the root
         return root;
     }
 };
