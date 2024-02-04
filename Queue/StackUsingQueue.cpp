@@ -1,6 +1,6 @@
 https://leetcode.com/problems/implement-stack-using-queues/
 
-```cpp
+
 class MyStack {
     queue<int> q;       // Using a queue to implement the stack
     int topEle;          // Variable to store the top element of the stack
