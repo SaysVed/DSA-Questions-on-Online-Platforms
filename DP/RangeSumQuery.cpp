@@ -1,5 +1,6 @@
 https://leetcode.com/problems/range-sum-query-immutable/description/
 
+
 class NumArray {
 private:
     vector<int> prefixSum;  // Vector to store prefix sums
