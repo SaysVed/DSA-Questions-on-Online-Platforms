@@ -15,3 +15,4 @@ public:
         return profit;  // Return the maximum profit achievable
     }
 };
+
